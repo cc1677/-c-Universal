@@ -9,7 +9,7 @@ if getgenv().STARLIGHT_WINDOW then
     end)
 end
 
--- CLEAN OLD CONNECTIONS FIRST
+
 if getgenv().ESP_CONNECTIONS then
     for _,c in pairs(getgenv().ESP_CONNECTIONS) do
         pcall(function()
@@ -22,7 +22,7 @@ if getgenv().ESP_CONNECTIONS then
     end
 end
 
--- THEN RESET
+
 getgenv().ESP_CONNECTIONS = {}
 getgenv().ESP_OBJECTS = {}
 
@@ -38,10 +38,10 @@ local Window = Starlight:CreateWindow({
     FileSettings={ConfigFolder="MyScript"}
 })
 
--- SAVE WINDOW (IMPORTANT FOR RE-EXEC CLEANUP)
+
 getgenv().STARLIGHT_WINDOW = Window
 
--- FIXED GUI TOGGLE
+
 local GUIVisible = true
 local function SetUI(state)
     GUIVisible = state
@@ -365,7 +365,6 @@ local ESPSettings = {
 }
 
 -- REMOVE ESP
--- REMOVE ESP
 local function removeESP(p)
     if ESPObjects[p] then
         for _,obj in pairs(ESPObjects[p]) do
@@ -381,14 +380,14 @@ local function removeESP(p)
     end
 end
 
--- PUT IT HERE
+
 getgenv().ESP_CLEANUP = function()
     for p,_ in pairs(ESPObjects) do
         removeESP(p)
     end
 end
 
--- REFRESH (rebuild ESP when toggles change)
+-- REFRESH 
 local function refreshESP()
     for p,_ in pairs(ESPObjects) do
         removeESP(p)
