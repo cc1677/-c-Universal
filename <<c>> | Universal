@@ -50,7 +50,7 @@ local NebulaIcons = loadstring(game:HttpGet("https://raw.nebulasoftworks.xyz/neb
 -- Window
 local Window = Starlight:CreateWindow({
     Name="<<c>> | Universal",
-    Subtitle="v1.0",
+    Subtitle="v1.1",
     Icon=NebulaIcons:GetIcon("view_in_ar","Material"),
     FileSettings={ConfigFolder="MyScript"}
 })
